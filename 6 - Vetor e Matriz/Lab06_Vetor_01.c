@@ -7,7 +7,7 @@ d) Mostre na tela cada valor do vetor A, um em cada linha.*/
 
 
 #include <stdio.h>
-#include <stdio.h>
+#include <stdlib.h>
 
 
 int main() {

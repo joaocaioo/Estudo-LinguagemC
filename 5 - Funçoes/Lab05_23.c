@@ -9,7 +9,7 @@
 */
 
 #include <stdio.h>
-#include <stdio.h>
+#include <stdlib.h>
 
 int trianguloLateral(int n) {
     int i, j;

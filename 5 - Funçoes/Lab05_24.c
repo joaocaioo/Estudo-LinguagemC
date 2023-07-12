@@ -8,7 +8,7 @@
 
 
 #include <stdio.h>
-#include <stdio.h>
+#include <stdlib.h>
 
 int triangulo(int n) {
     int i, j, k;

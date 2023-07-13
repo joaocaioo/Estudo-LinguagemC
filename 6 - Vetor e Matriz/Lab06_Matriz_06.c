@@ -24,18 +24,30 @@ int main() {
         }
     }
 
-    for (i = 0; i < 4; i++){
+    for (i = 0; i < 4; i++){ //Matriz original
         printf("\n");
         for (j = 0; j < 4; j++){
-            if (i >= j){
-                printf("%d ", matriz[i][j]);
-            }else if(i < j){
-                matriz[i][j] = 0;
-                printf("%d ", matriz[i][j]);
-            }
+
+            printf("%02d ", matriz[i][j]);
 
         }
 
+    }
+    
+    printf("\n\n");
+
+
+    for (i = 0; i < 4; i++){ //Matriz triangular inferior
+        printf("\n");
+        for (j = 0; j < 4; j++){
+            if (i >= j){
+                printf("%02d ", matriz[i][j]);
+            }else if(i < j){
+                matriz[i][j] = 0;
+                printf("%02d ", matriz[i][j]);
+            }
+
+        }
 
     }
     

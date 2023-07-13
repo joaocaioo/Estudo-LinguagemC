@@ -30,7 +30,7 @@ int main() {
 
             }
 
-            printf("%d ", matriz[i][j]);
+            printf("%04d ", matriz[i][j]);
         }
     }
     

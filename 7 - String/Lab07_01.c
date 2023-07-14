@@ -5,10 +5,10 @@
 
 int main(){
 
-    char string[50];
+    char str[50];
     printf("Digite uma string\n");
-    fgets(string, 50, stdin);
-    printf("%s", string);
+    fgets(str, 50, stdin);
+    printf("\n%s", str);
 
     return 0;
 }

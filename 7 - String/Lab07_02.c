@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(){
 
@@ -9,7 +10,6 @@ int main(){
     char str[10];
     printf("Digite uma string apenas com zero e um\n");
     fgets(str, 10, stdin);
-    printf("\n%s", str);
     
     for (i = 0; str[i] != '\0'; i++)
     {

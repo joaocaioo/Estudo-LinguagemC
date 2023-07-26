@@ -10,36 +10,34 @@ Calcule e mostre:
 #define NUM_CARROS 5
 
 int main() {
-    char modelos[NUM_CARROS][100] = {"Fusca","Gol","Vectra","Corolla","Civic"};
-
+    
+    int i, modelo, economico = 0;
+    char carros[NUM_CARROS][100] = {"Fusca","Gol","Vectra","Corolla","Civic"};
     float consumo[NUM_CARROS] = {12.5, 14.2, 10.8, 15.1, 13.7};
 
-    int i, indice_carro_mais_economico = 0;
-    float menor_consumo = 9999.0;  // inicializa com valor alto para comparar e encontrar o menor consumo.
+    printf("(a) O modelo de carro mais economico\n");
+    for (i = 0; i < NUM_CARROS; i++){ //achar o modelo do carro de menor consumo 
+        
+        if (consumo[i] > economico){
 
-    printf("Modelos e Consumo dos Carros:\n");
-    for (i = 0; i < NUM_CARROS; i++) {
-        printf("%s - %.1f km/l\n", modelos[i], consumo[i]);
-    }
+            economico = consumo[i];
+            modelo = i;
 
-    
-    for (i = 0; i < NUM_CARROS; i++) { // encontrando o modelo de carro mais econômico
-        if (consumo[i] < menor_consumo) {
-            menor_consumo = consumo[i];
-            indice_carro_mais_economico = i;
         }
     }
+    
+    printf("%s", carros[modelo]);
+
     printf("\n");
-    printf("O modelo de carro mais economico\n%s", modelos[indice_carro_mais_economico]);
+    printf("(b) Quantos litros de combustivel cada um dos carros cadastrados consome para percorrer uma distancia de 1.000 quilometros.\n");
+    float litros; 
+    for (i = 0; i < NUM_CARROS; i++){
+        
+        litros = 1000 / consumo[i];
+        printf("%s: %.2f Litros\n", carros[i], litros);
 
-    // Calcula e mostra quantos litros de combustível cada carro consome para percorrer 1000 quilômetros
-
-    printf("\n\n");
-    printf("Consumo para percorrer 1000 quilometros\n");
-    for (i = 0; i < NUM_CARROS; i++) {
-        float litros_consumidos = 1000.0 / consumo[i];
-        printf("%s: %.2f litros\n", modelos[i], litros_consumidos);
     }
+    
 
     return 0;
 }

@@ -5,23 +5,27 @@
 #include <string.h>
 
 int main() {
+
+    int i;
     char frase[100];
-    char resultado[100];
-    int j = 0;
 
     printf("Digite uma frase\n");
     fgets(frase, 100, stdin);
 
-    for (int i = 0; frase[i] != '\0'; i++) {
-        if (frase[i] != ' ') {
-            resultado[j] = frase[i];
-            j++;
-        }
-    }
+    int tamanho = strlen(frase) - 1;
 
-    resultado[j] = '\0';
-    printf("\n\n");
-    printf("Vetor resultante\n%s", resultado);
+    for (i = 0; i < tamanho; i++){
+       
+       if(frase[i] == 32){
+        
+        frase[i] = 127;
+
+       }
+       
+    }
+    
+    printf("\n");
+    fputs(frase, stdout);
 
     return 0;
 }

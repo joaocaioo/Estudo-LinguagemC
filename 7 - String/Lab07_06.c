@@ -5,20 +5,24 @@
 #include <string.h>
 
 int main() {
-    char cadeia[100];
+    
+    int i;
+    char cadeia[50];
 
-    printf("Digite Letras minusculas\n");
-    fgets(cadeia, 100, stdin);
+    printf("Digite uma cadeia de caracteres de letras minusculas\n");
+    fgets(cadeia, 50, stdin);
 
-    int i = 0;
-    while (cadeia[i] != '\0') {
-        if (cadeia[i] >= 'a' && cadeia[i] <= 'z') {
-            cadeia[i] = cadeia[i] - 32;
+    int tamanho = strlen(cadeia) - 1;
+
+    for (i = 0; i < tamanho; i++){
+        
+        if(cadeia[i] >= 97 && cadeia[i] <= 122){
+
+            cadeia[i] -= 32; 
         }
-        i++;
     }
-
-    printf("Letras maiusculas\n%s", cadeia);
+    
+    fputs(cadeia, stdout);
 
     return 0;
 }

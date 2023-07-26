@@ -4,28 +4,21 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 int main() {
-    char nome[100];
-    float valorTotal, valorDesconto, valorAVista;
+    
+    char produto[50];
+    float valor;
+    
+    printf("Digite o nome do produto\n");
+    fgets(produto, 50, stdin);
+    printf("Digite o valor do produto\n");
+    scanf("%f", &valor);
 
-    // Leitura do nome da mercadoria e valor total
-    printf("Digite o nome da mercadoria\n");
-    fgets(nome, 100, stdin);
-
-    printf("Digite o valor total da mercadoria\n");
-    scanf("%f", &valorTotal);
-
-    // Cálculo do desconto e do valor a ser pago à vista
-    valorDesconto = valorTotal * 0.1; // 10% de desconto
-    valorAVista = valorTotal - valorDesconto;
-
-    // Exibição dos resultados
+    float desconto = valor * 0.1;
+    
     printf("\n");
-    printf("Mercadoria: %s", nome);
-    printf("Valor total: R$ %.2f\n", valorTotal);
-    printf("Valor do desconto: R$ %.2f\n", valorDesconto);
-    printf("Valor a ser pago a vista: R$ %.2f\n", valorAVista);
+    printf("Produto: %sValor: R$%.2f\nDesconto: R$%.2f\n\nValor a ser pago a vista: R$%.2f", produto, valor, desconto, valor - desconto);
 
     return 0;
 }
-

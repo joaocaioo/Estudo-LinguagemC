@@ -5,26 +5,31 @@
 #include <string.h>
 
 int main() {
-    char frase[100];
-    char L1, L2;
+    
+    int i;
+    char L1, L2, str[100];
 
     printf("Digite uma frase\n");
-    fgets(frase, 100, stdin);
+    fgets(str, 100, stdin);
 
-    printf("Digite a letra que deseja trocar\n");
+    int tamanho = strlen(str) - 1;
+
+    printf("Digite uma letra para ser substituida\n");
     scanf(" %c", &L1);
-
-    printf("Digite a letra quevai ser trocada pela letra '%c'\n", L1);
+    printf("Digite uma letra para substituir a letra escolhida\n");
     scanf(" %c", &L2);
 
-    for (int i = 0; frase[i] != '\0'; i++) {
-        if (frase[i] == L1) {
-            frase[i] = L2;
+    for (i = 0; i < tamanho; i++){
+        
+        if (str[i] == L1){
+            
+            str[i] = L2;
         }
+        
     }
-
-    printf("\n\n");
-    printf("%s", frase);
+    
+    printf("\n");
+    fputs(str, stdout);
 
     return 0;
 }
